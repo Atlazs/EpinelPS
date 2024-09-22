@@ -22,8 +22,9 @@ namespace EpinelPS.LobbyServer.Msgs.User
                 response.Data.LastCampaignNormalStageId = user.LastNormalStageCleared;
                 response.Data.LastCampaignHardStageId = user.LastHardStageCleared;
                 response.Data.OutpostOpenState = user.MainQuestData.ContainsKey(25);
+                response.Data.LastTribeTowerFloor = user.TowerProgress[5];
 
-                foreach (var item in user.RepresentationTeamData.Slots)
+            foreach (var item in user.RepresentationTeamData.Slots)
                 {
                     var c = user.GetCharacterBySerialNumber(item.Csn);
 
